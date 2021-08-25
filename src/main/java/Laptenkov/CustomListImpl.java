@@ -560,10 +560,10 @@ public class CustomListImpl<T> implements CustomList<T> {
     @Override
     public void reverse() {
         CustomListImpl<T> customList = new CustomListImpl();
-        Node<T> tmp = last;
+        Node<T> tmp = first.next;
         for (int i = 0; i < size; i++) {
-            customList.addLast(tmp.item);
-            tmp = tmp.prev;
+            customList.addFirst(tmp.item);
+            tmp = tmp.next;
         }
         first = customList.first;
     }
